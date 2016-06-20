@@ -34,23 +34,16 @@
 	$ver_answer = sanitizeString($conn,$ver_answer);
 	$location = sanitizeString($conn,$location);
 	$profile_pic = sanitizeString($conn,$profile_pic);
-	//$result = mysqli_query($conn, "SELECT * FROM users WHERE id = '$id'");
-	//$row = mysqli_fetch_assoc($result);
 
-	//$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 	if( mysqli_connect_errno($conn)){
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
 
-	//$result = mysqli_query($conn,"SELECT * FROM users WHERE username='$username' AND password='$password'");
-
-	//$result = mysqli_query($conn,"SELECT * FROM users");
 	$result_insert = mysqli_query($conn, "INSERT INTO users(username,password,Name,email,dob,gender,verification_question,verification_answer,location,profile_pic) VALUES ('$username','$crypt','$name','$email','$dob','$gender','$ver_question','$ver_answer','$location','$profile_pic')");
 
-	//$num_of_rows = mysqli_num_rows($result);
 
 	if($result_insert){
-	
+		//redirect to feed.php
 		$_SESSION["username"] = $username;	
 		header ("Location: feed.php");	
 	}else{
