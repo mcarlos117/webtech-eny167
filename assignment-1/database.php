@@ -1,6 +1,7 @@
 <?php
 	$dbhost = "localhost";
 	$dbuser = "root";
+	//NOT SURE WHAT YOUR PASSWORD IS. I KNOW IT IS NOT THE SAME SO I HAVE BOTH THERE
 	$dbpass = "";
 	//$dbpass = "root";
 	$dbname = "mydb";
